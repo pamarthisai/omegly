@@ -14,12 +14,12 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Serve landing page at the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'landing.html'));
+    res.sendFile(path.join(__dirname, 'index.html')); // This serves the former landing.html
 });
 
-// Serve main page
+// Serve video page
 app.get('/video', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'landing.html')); // This serves the former index.html
 });
 
 // Start the server
