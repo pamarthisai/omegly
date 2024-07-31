@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080; // Use environment port or fallback
 
 // Resolve directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -14,12 +14,12 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Serve landing page at the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html')); // This serves the former landing.html
+    res.sendFile(path.join(__dirname, 'index.html')); // Serve former landing.html
 });
 
 // Serve video page
 app.get('/video', (req, res) => {
-    res.sendFile(path.join(__dirname, 'landing.html')); // This serves the former index.html
+    res.sendFile(path.join(__dirname, 'landing.html')); // Serve former index.html
 });
 
 // Start the server
