@@ -1,11 +1,14 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import helmet from 'helmet';  // Keep this import
+import helmet from 'helmet';
 import compression from 'compression';
 import morgan from 'morgan';
 
+// Create an Express application
 const app = express();
+
+// Port configuration
 const port = process.env.PORT || 8080;
 
 // Resolve directory name
@@ -30,7 +33,5 @@ app.get('/video', (req, res) => {
     res.sendFile(path.join(__dirname, 'landing.html')); // Previously 'index.html'
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-});
+// Export the handler for Vercel
+export default app;
