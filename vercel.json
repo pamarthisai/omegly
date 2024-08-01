@@ -1,10 +1,12 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/node" }
+    {
+      "src": "package.json",
+      "use": "@vercel/static"
+    }
   ],
   "routes": [
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/video", "dest": "/video.html" }
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
