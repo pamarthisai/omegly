@@ -87,7 +87,7 @@
         country: "Caribbean Netherlands",
         code: "bq"
     }];
-    const w = io.connect("wss://omegly.icaell.com"),
+    const w = io.connect("wss:omegly.vercel.app"),
         j = new Peer;
 
     function x(t, e) {
