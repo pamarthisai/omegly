@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (videoButton) {
         videoButton.addEventListener('click', () => {
-            window.location.href = '/video';
+            window.location.href = '/video'; // Ensure this path is correct
         });
     }
 });
